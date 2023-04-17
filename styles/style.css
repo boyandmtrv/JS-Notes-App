@@ -150,6 +150,7 @@ body {
 .warning {
     border-color: red !important;
 }
+
 @media (min-width: 992px) {
     .note-list {
         display: grid;
