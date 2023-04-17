@@ -89,9 +89,7 @@ body {
 }
 
 .note-item {
-    display: flex;
-    flex-direction: column;
-    width: 50%;
+    width: 500px;
     margin: 1rem;
     padding: 1.5rem;
     border-radius: 7px;
@@ -123,10 +121,39 @@ body {
     margin-top: 1rem;
     text-align: center;
     justify-content: center;
-    transition: all 0.1s ease-in-out;
-    
+    transition: all 0.1s ease-in-out;    
 }
+
 
 .delete-btn:hover {
     background-color: #fcde84
 } 
+
+.delete-note-btn {
+    display: flex;
+    padding: 0.55rem 0;
+    width: 25%;
+    margin-top: 0.8rem;
+    background-color: #F7D060;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 1.20rem;
+    font-weight: 500;
+    margin-top: 1rem;
+    text-align: center;
+    justify-content: center;
+    transition: all 0.1s ease-in-out;    
+}
+
+.warning {
+    border-color: red !important;
+}
+@media (min-width: 992px) {
+    .note-list {
+        display: grid;
+        grid-template-columns: repeat(2, 2fr);
+        height: 25%;
+    }
+}
