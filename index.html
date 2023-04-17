@@ -8,8 +8,27 @@
     <title>Note App</title>
 </head>
 <body>
-    
-
+    <div class="note">
+        <div class="note-input">
+            <h3 class="add-note">Add a new Note</h3>
+            <div class="note-wrapper">
+                <input class="note-text" type="text" id="note-title" placeholder="Add Title">
+                <textarea class="content" id="note-content" rows="5" placeholder="Write..."></textarea>
+                <button id="add-note-btn" class="add-btn" type="button">
+                    <span>Add Note</span>
+                </button>
+            </div>
+        </div>
+        <div class="note-list">
+            <div class="note-item">
+                <h3 class="title">Title goes here</h3>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente accusantium natus esse harum sit, vel totam quod cupiditate quidem blanditiis ea, repudiandae deleniti animi modi doloremque. Laborum officia voluptatibus nisi?</p>
+                <button id="add-note-btn" class="delete-btn" type="button">
+                    <span>Delete</span>
+                </button>
+            </div>
+        </div>
+    </div>
     <script src="script/app.js"></script>
 </body>
 </html>
