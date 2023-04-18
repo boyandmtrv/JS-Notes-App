@@ -1,160 +1,202 @@
-@import url('https://fonts.googleapis.com/css2?family=Inconsolata&family=Montserrat:wght@300;400&family=Open+Sans&family=Poppins:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata&family=Montserrat:wght@300;400&family=Open+Sans&family=Poppins:wght@300&display=swap");
+
+:root {
+  --background-color: #f7f7f7;
+  --main-color: #e8e8e8;
+  --border-color: #dddddd;
+  --button-color: #f7d060;
+  --button-hover-color: #fcde84;
+  --icon-color: #fff;
+  --heading-color: black;
+  --text-color: #141720;
+  --moon-color: #e8e8e8;
+  --moon-color: #10151c;
+}
+.dark-theme {
+  --background-color: #141720;
+  --main-color: #10151c;
+  --border-color: #2e3842;
+  --button-color: #f7d060;
+  --button-hover-color: #fcde84;
+  --icon-color: #141720;
+  --heading-color: #fff;
+  --text-color: #d8d8d8;
+  --moon-color: #e8e8e8;
+}
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
 }
 
 body {
-    line-height: 1.5;
-    font-weight: 300;
-    background-color: #f7f7f7;
-    height: 100vh;
+  line-height: 1.5;
+  font-weight: 300;
+  background-color: var(--background-color);
+  transition: background 0.5s, color 0.5s;
+  height: 100vh;
 }
 
 .note {
-    display: flex;
-    height: 100%;
+  display: flex;
+  height: 100%;
 }
 
 .add-note {
-    text-align: center;
-    font-size: 3rem;
+  text-align: center;
+  font-size: 3rem;
+  color: var(--text-color);
 }
 
 .note-input {
-    border-right: 2px solid #dddddd;
-    flex-shrink: 0;
-    overflow-y: auto;
-    padding: 1rem;
-    width: 30%;
+  border-right: 2px solid var(--border-color);
+  flex-shrink: 0;
+  overflow-y: auto;
+  padding: 1rem;
+  width: 30%;
 }
 
 .note-wrapper {
-    display: flex;
-    flex-direction: column;
-    padding: 3rem 1rem;
-    flex-grow: 1;
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 3rem 1rem;
+  flex-grow: 1;
+  width: 100%;
 }
 
 .note-text {
-    font-size: 1.5rem;
-    text-align: center;
-    background-color: #e8e8e8;
-    border: none;
-    border-radius: 7px;
-    line-height: 2;
+  font-size: 1.5rem;
+  text-align: center;
+  background-color: var(--main-color);
+  color: var(--text-color);
+  border: none;
+  border-radius: 7px;
+  line-height: 2;
 }
 .content {
-    flex-grow: 1;
-    font-size: 1.2em;
-    line-height: 3;
-    margin-top: 2rem;
-    background-color: #e8e8e8;
-    border: none;
-    border-radius: 7px;
-    resize: none;
+  flex-grow: 1;
+  font-size: 1.2em;
+  line-height: 3;
+  margin-top: 2rem;
+  background-color: var(--main-color);
+  color: var(--text-color);
+  border: none;
+  border-radius: 7px;
+  resize: none;
 }
 
 .add-btn {
-    background-color: #F7D060;
-    border: none;
-    border-radius: 7px;
-    cursor: pointer;
-    color: #fff;
-    font-size: 1.25rem;
-    font-weight: 500;
-    margin-top: 2rem;
-    padding: 0.75rem 0;
-    width: 50%;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    top: 25%;
-    left: 25%;
-    transition: all 0.1s ease-in-out;
+  background-color: #f7d060;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+  color: var(--icon-color);
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-top: 2rem;
+  padding: 0.75rem 0;
+  width: 50%;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  top: 25%;
+  left: 25%;
+  transition: all 0.1s ease-in-out;
 }
 
 .add-btn:hover {
-    background-color: #fcde84
+  background-color: #fcde84;
 }
 
 .note-list {
-    margin: 2rem 0;
-    padding: 2rem;
-    border-radius: 7px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr 2fr 1fr;
+  align-items: flex-start;
+  gap: 30px 20px;
 }
 
 .note-item {
-    width: 500px;
-    margin: 1rem;
-    padding: 1.5rem;
-    border-radius: 7px;
-    background-color: #dddddd;
+  margin-top: 2rem;
+  margin-left: 6rem;
+  background-color: var(--main-color);
+  padding: 1rem;
+  border: none;
+  border-radius: 7px;
+  min-width: 170px;
+  max-width: 300px;
 }
 
 .note-item h3 {
-    margin-bottom: 1rem;
-    font-size: 2rem;
+  word-wrap: break-word;
+  word-break: break-all;
+  padding-top: 0.5rem;
+  color: var(--heading-color);
 }
-
 .note-item p {
-    padding-bottom: 0.8rem;
-    font-size: 1.2rem;
+  word-wrap: break-word;
+  word-break: break-all;
+  padding-top: 0.5rem;
+  color: var(--heading-color);
 }
-
-.delete-btn{
-    display: flex;
-    padding: 0.55rem 0;
-    width: 25%;
-    margin-top: 0.8rem;
-    background-color: #F7D060;
-    border: none;
-    border-radius: 7px;
-    cursor: pointer;
-    color: #fff;
-    font-size: 1.20rem;
-    font-weight: 500;
-    margin-top: 1rem;
-    text-align: center;
-    justify-content: center;
-    transition: all 0.1s ease-in-out;    
-}
-
-
-.delete-btn:hover {
-    background-color: #fcde84
-} 
 
 .delete-note-btn {
-    display: flex;
-    padding: 0.55rem 0;
-    width: 25%;
-    margin-top: 0.8rem;
-    background-color: #F7D060;
-    border: none;
-    border-radius: 7px;
-    cursor: pointer;
-    color: #fff;
-    font-size: 1.20rem;
-    font-weight: 500;
-    margin-top: 1rem;
-    text-align: center;
-    justify-content: center;
-    transition: all 0.1s ease-in-out;    
+  padding: 0.55rem 0;
+  background-color: #f7d060;
+  border: none;
+  width: 25%;
+  border-radius: 7px;
+  cursor: pointer;
+  color: var(--icon-color);
+  font-size: 1.2rem;
+  margin-top: 10px;
+  font-weight: 500;
+  text-align: center;
+  justify-content: center;
+  transition: all 0.1s ease-in-out;
+}
+
+.delete-note-btn:hover {
+  background-color: #fcde84;
 }
 
 .warning {
-    border-color: red !important;
+  border-color: red !important;
 }
 
-@media (min-width: 992px) {
-    .note-list {
-        display: grid;
-        grid-template-columns: repeat(2, 2fr);
-        height: 25%;
-    }
+#moon {
+  display: flex;
+  color: var(--moon-color);
+  font-size: 25px;
+  margin-top: 5px;
+  margin-left: 96%;
+  cursor: pointer;
 }
+
+@media screen and (max-width: 1395px) and (min-width: 1078px) {
+  .note-input {
+    width: 35%;
+  }
+
+  .note-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 1077px) and (min-width: 886px) {
+  .add-note {
+    font-size: 2rem;
+  }
+
+  .note-input {
+    width: 50%;
+  }
+
+  .note-list {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+}
+
